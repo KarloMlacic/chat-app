@@ -3,7 +3,7 @@ import Messages from "./Components/Messages";
 import Input from "./Components/Input";
 import "./App.css";
 
-const scaledroneChannelID = "process.env.REACT_APP_SCALEDROne_CHANNEL_ID";
+const scaledroneChannelID = process.env.REACT_APP_SCALEDROne_CHANNEL_ID;
 
 function randomName() {
   const adjectives = ["autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark", "summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter", "patient", "twilight", "dawn", "crimson", "wispy", "weathered", "blue", "billowing", "broken", "cold", "damp", "falling", "frosty", "green", "long", "late", "lingering", "bold", "little", "morning", "muddy", "old", "red", "rough", "still", "small", "sparkling", "throbbing", "shy", "wandering", "withered", "wild", "black", "young", "holy", "solitary", "fragrant", "aged", "snowy", "proud", "floral", "restless", "divine", "polished", "ancient", "purple", "lively", "nameless"];
