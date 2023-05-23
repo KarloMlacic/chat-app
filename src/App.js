@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Messages from "./Components/Messages";
 import Input from "./Components/Input";
-import "./App.css";
+import "./App.scss";
 
 const scaledroneChannelID = process.env.REACT_APP_SCALEDROne_CHANNEL_ID;
 

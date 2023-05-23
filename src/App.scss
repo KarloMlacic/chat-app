@@ -1,14 +1,29 @@
+$primaryColor: white;
+$secondaryColor1: #21409A;
+$secondaryColor2: #ED1C24;
+$secondaryColor3: #FFC20E;
 .App {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 20px auto;
+    background-color: $primaryColor;
+    border: 15px solid $secondaryColor3;
+    border-radius: 10px;
+    overflow-y: hidden;
+    width: 100vw;
+    max-width: 480px;
+    box-shadow: 0 0 10px $secondaryColor3;
 }
 
+
 .App-header {
-  background-color: #262626;
-  overflow: visible;
-  width: 100%;
+  background: linear-gradient(to right, $secondaryColor1, $secondaryColor2);
+  overflow: hidden;
+  width: calc(100% - 40px);
+  margin: -20px auto 20px;
+  padding: 20px;
   text-align: center;
   color: white;
 }
@@ -16,12 +31,11 @@
 .Messages-list {
   padding: 20px 0;
   max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
-  list-style: none;
-  padding-left: 0;
-  flex-grow: 1;
-  overflow: auto;
+  width: calc(100% + 40px);
+  text-align: center;
+  color: white;
+  padding: 10px;
+  margin: -20px -20px 20px -20px;
 }
 
 .Messages-message {
@@ -30,7 +44,6 @@
 }
 
 .Messages-message.currentMember {
-  /*justify-content: flex-end;*/
   flex-direction: row-reverse;
   text-align: right;
 }
@@ -84,14 +97,14 @@ input {
   padding: 5px;
   font-size: 16px;
   border-radius: 8px;
-  border: 1px solid orangered;
+  border: 1px solid $secondaryColor3;
   flex-grow: 1;
 }
 
 button {
   padding: 5px 10px;
   font-size: 16px;
-  background-color: orangered;
+  background-color: $secondaryColor3;
   color: white;
   border: none;
   border-radius: 8px;
