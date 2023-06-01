@@ -2,6 +2,8 @@ $primaryColor: white;
 $secondaryColor1: #21409A;
 $secondaryColor2: #ED1C24;
 $secondaryColor3: #FFC20E;
+
+
 .App {
     display: flex;
     flex-direction: column;
@@ -33,7 +35,7 @@ $secondaryColor3: #FFC20E;
   max-width: 900px;
   width: 100%;
   text-align: center;
-  color: white;
+  background-color: $primaryColor;
   padding: 10px;
   margin: -20px -20px 20px -20px;
 }
@@ -57,16 +59,19 @@ $secondaryColor3: #FFC20E;
 }
 
 .Messages-message > .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
+  height: 10px;
+  width: 10px;
   display: inline-block;
   margin: 0 10px -10px;
+  border-radius: 4px; 
+  text-align: center;
+  line-height: 35px;
+  font-weight: bold;
 }
 
 .Message-content > .username {
   display: block;
-  color: gray;
+  color: $secondaryColor2;
   font-size: 14px;
   padding-bottom: 4px;
 }
@@ -76,13 +81,13 @@ $secondaryColor3: #FFC20E;
   max-width: 400px;
   margin: 0;
   border-radius: 12px;
-  background-color: cornflowerblue;
-  color: white;
+  background-color: $secondaryColor1;
+  color: $secondaryColor1;
   display: inline-block;
 }
 
 .currentMember > .Message-content .text {
-  background-color: orangered;
+  background-color: $secondaryColor3;
 }
 
 form {
