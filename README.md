@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Simple Chat App using Scaledrone API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple chat app built with React and the Scaledrone API. It allows real-time messaging with multiple users and provides cool usernames and colors.¸
+**Please note that this app is for practice purposes and will not be fully finished. It serves as a learning project to explore React and the Scaledrone API.**
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+1.  Clone the repository:
 
-### `npm start`
+        https://github.com/KarloMlacic/chat-app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2.  Go to the project directory:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+        cd chat-app
 
-### `npm test`
+3.  Install the dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        npm install
 
-### `npm run build`
+4.  Get a Scaledrone API key from [Scaledrone](https://www.scaledrone.com/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5.  Configure the Scaledrone API key in `App.js`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+6.  Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        npm start
 
-### `npm run eject`
+7.  Open the app in your browser: `http://localhost:3000`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Enter a message in the input field at the bottom of the chat interface and press Enter or click the send button to send the message.
+- All connected users will receive the message in real-time and it will be displayed in the chat interface.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##
