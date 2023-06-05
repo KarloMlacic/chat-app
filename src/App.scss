@@ -1,43 +1,46 @@
-$primaryColor: white;
-$secondaryColor1: #21409A;
-$secondaryColor2: #ED1C24;
-$secondaryColor3: #FFC20E;
-
+$primary-color: #4b6043;
+$secondary-color1: #75975e;
+$secondary-color2: #658354;
+$secondary-color3: #ddead1;
+$secondary-color4: #9b7653;
+$secondary-color5: black;
 
 .App {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-    margin: 20px auto;
-    background-color: $primaryColor;
-    border: 15px solid $secondaryColor3;
-    border-radius: 10px;
-    overflow-y: hidden;
-    width: 100vw;
-    max-width: 480px;
-    box-shadow: 0 0 10px $secondaryColor3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1491146179969-d674118945ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80");
 }
 
-
 .App-header {
-  background: linear-gradient(to right, $secondaryColor1, $secondaryColor2);
-  overflow: hidden;
-  width: calc(100% - 40px);
-  margin: -20px auto 20px;
-  padding: 20px;
+  background-color: $primary-color;
+  width: 100%;
   text-align: center;
-  color: white;
+  color: $secondary-color3;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  opacity: 1;
 }
 
 .Messages-list {
-  padding: 20px 0;
+  padding: 15px 0;
   max-width: 900px;
   width: 100%;
-  text-align: center;
-  background-color: $primaryColor;
-  padding: 10px;
-  margin: -20px -20px 20px -20px;
+  margin: 0 auto;
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.Messages-list::-webkit-scrollbar {
+  width: 10px;
+  background-color: $secondary-color2;
+}
+
+.Messages-list::-webkit-scrollbar-thumb {
+  background-color: $primary-color;
 }
 
 .Messages-message {
@@ -54,66 +57,78 @@ $secondaryColor3: #FFC20E;
   display: inline-block;
 }
 
-.currentMember > .Message-content {
-  align-items: flex-end;
+.user-timestamp-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: $secondary-color1 ;
+  border-radius: 5px;
+  
 }
 
-.Messages-message > .avatar {
-  height: 10px;
-  width: 10px;
-  display: inline-block;
-  margin: 0 10px -10px;
-  border-radius: 4px; 
-  text-align: center;
-  line-height: 35px;
-  font-weight: bold;
-}
-
-.Message-content > .username {
-  display: block;
-  color: $secondaryColor2;
-  font-size: 14px;
+.username {
+  color: $secondary-color3;
+  font-size: 20px;
   padding-bottom: 4px;
-  font-family: "Arial", sans-serif;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.Message-content > .text {
+.timestamp {
+  color: $secondary-color3;
+  font-size: 10px;
+  padding-bottom: 0px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.text {
   padding: 10px;
   max-width: 400px;
   margin: 0;
-  border-radius: 12px;
-  
-  background-color: $secondaryColor1;
+  border-radius: 13px;
+  background-color: $secondary-color2;
+  color: $secondary-color3;
   display: inline-block;
+  word-break: break-word;
 }
 
 .currentMember > .Message-content .text {
-  background-color: $secondaryColor3;
+  background-color: $primary-color;
 }
 
 form {
   display: flex;
-  width: 100%;
+  width: 94%;
   justify-content: space-between;
-  max-width: 900px;
+  max-width: 875px;
   margin: 0 auto 40px;
 }
 
 input {
   padding: 5px;
-  font-size: 16px;
+  font-size: 15px;
   border-radius: 8px;
-  border: 1px solid $secondaryColor3;
+  border: 1px solid $secondary-color1;
   flex-grow: 1;
+  background-color: $secondary-color1;
+  color:$secondary-color3;
 }
 
 button {
-  padding: 5px 10px;
+  padding: 7px 10px;
   font-size: 16px;
-  background-color: $secondaryColor3;
-  color: white;
+  background-color: $secondary-color1;
+  color: $secondary-color3;
   border: none;
   border-radius: 8px;
-  margin-left: 10px;
+  margin-left: 9px;
+}
+.avatar {
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 7px -7px;
 }
