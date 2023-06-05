@@ -1,9 +1,8 @@
 import React from "react";
 
-
 const Messages = ({ messages, currentMember }) => {
   const renderMessage = (message, index) => {
-    const { member, text } = message;
+    const { member } = message;
     if (!member) {
       console.error("Invalid message: no member object", message);
       return null;
@@ -16,12 +15,15 @@ const Messages = ({ messages, currentMember }) => {
 
     return (
       <li key={index} className={className}>
-        <span className="avatar" style={{ backgroundColor: member.clientData.color }} />
-        <div className="Message-content">
-          <div className="username">{member.clientData.username}</div>
-          <div className="text">{text}</div>
+      
+      <div className="Message-content">
+        <div className="user-timestamp-wrapper">
+          <span className="username" >{message.member.clientData.username}</span>
+          <span className="timestamp">{message.timestamp}</span>
         </div>
-      </li>
+        <span className="text">{message.data}</span>
+      </div>
+    </li>
     );
   };
 
