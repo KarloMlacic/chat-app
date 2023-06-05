@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./App.scss";
 import Messages from "./Components/Messages";
 import Input from "./Components/Input";
@@ -13,6 +13,13 @@ const App = () => {
     color: randomColor(),
   });
   const [drone, setDrone] = useState(null);
+  const messageListRef = useRef(null);
+
+  const scrollToBottom = () => {
+    if (messageListRef.current) {
+      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+    }
+  };
 
   useEffect(() => {
     const newDrone = new window.Scaledrone(scaledroneChannelID, {
@@ -27,17 +34,24 @@ const App = () => {
 
     newDrone.on("open", (error) => {
       if (error) {
-        return console.error(error);
+        console.error(error);
+      } else {
+        const updatedMember = { ...member };
+        updatedMember.id = newDrone.clientId;
+        setMember(updatedMember);
       }
-      const updatedMember = { ...member };
-      updatedMember.id = newDrone.clientId;
-      setMember(updatedMember);
     });
 
     const room = newDrone.subscribe("observable-room");
 
-    room.on("data", (data, member) => {
-      setMessages((messages) => [...messages, { member, text: data }]);
+    room.on("message", (message) => {
+      const newMessage = {
+        member: message.member,
+        data: message.data,
+        timestamp: new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),
+      };
+      setMessages((messages) => [...messages, newMessage]);
+      scrollToBottom();
     });
 
     setDrone(newDrone);
@@ -47,6 +61,10 @@ const App = () => {
       newDrone.close();
     };
   }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const onSendMessage = (message) => {
     if (message.trim() !== "") {
@@ -62,7 +80,9 @@ const App = () => {
       <div className="App-header">
         <h1>Chat App</h1>
       </div>
-      <Messages messages={messages} currentMember={member} />
+      <div className="Messages-list" ref={messageListRef}>
+        <Messages messages={messages} currentMember={member} />
+      </div>
       <Input onSendMessage={onSendMessage} />
     </div>
   );
